@@ -1,0 +1,44 @@
+<!-- 
+ descendant selector (space)
+child selector (>)
+adjacent sibling selector (+)
+general sibling selector (~)
+ -->
+
+
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+ <style>
+ div + p {
+   background-color: rgb(111, 217, 243);
+   width: 120px;
+ }
+ </style>
+ </head>
+ <body>
+ 
+ <h2>Combinators</h2>
+ 
+ <p>hello!!!!</p>
+ 
+ <div>
+   <p>Paragraph 1 </p>
+   <p>Paragraph 2 </p>
+   <section><p>Paragraph 3 </p></section>
+ </div>
+ <p>after div</p>
+ <p>Paragraph 4. Not in a div.</p>
+
+ <div>
+    <p>Paragraph 1 </p>
+    <p>Paragraph 2 </p>
+    <section><p>Paragraph 3 </p></section>
+  </div>
+  
+  <p>Paragraph 4. Not in a div.</p>
+
+ 
+ </body>
+ </html>

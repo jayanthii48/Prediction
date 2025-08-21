@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple To-Do List</title>
+ 
+</head>
+<body>
+
+  <h1>Simple To-Do List</h1>
+
+  <!-- Form to add new tasks -->
+  <div id="taskForm">
+    <input type="text" id="taskInput" placeholder="Enter a new task" />
+    <button onclick="addTask()">Add Task</button>
+  </div>
+
+  <!-- List of tasks -->
+  <ul id="taskList"></ul>
+
+  <script>
+    let tasks = []; // Array to store tasks
+
+    // Function to add a task to the array and update the UI
+    function addTask() {
+      const task= document.getElementById('taskInput').value;
+    //   const task = taskInput.value; // Get the task text
+
+      if (task !== '') {
+        tasks.push(task); // Add task to the array
+        taskInput.value = ''; // Clear input field
+        updateTaskList(); // Update the task list UI
+      }
+    }
+
+    // Function to remove a task from the array
+    // function removeTask(index) {
+    //   tasks.splice(index, 1); // Remove the task at the given index
+    //   updateTaskList(); // Update the task list UI
+    // }
+
+    // Function to update the task list UI
+    function updateTaskList() {
+      const taskList = document.getElementById('taskList');
+      taskList.innerHTML = ''; // Clear the task list
+
+      for (let i = 0; i < tasks.length; i++) {
+    const li = document.createElement('li');
+    li.innerHTML = tasks[i]; // Access each task by index
+    taskList.appendChild(li); // Add task to the UI
+  }
+    }
+  </script>
+
+</body>
+</html>
